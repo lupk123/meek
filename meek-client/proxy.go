@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-import "git.torproject.org/pluggable-transports/goptlib.git"
+import "github.com/Yawning/goptlib"
 
 // The code in this file has to do with configuring an upstream proxy, whether
 // through the command line or the managed interface of proposal 232
