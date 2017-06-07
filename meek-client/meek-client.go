@@ -47,7 +47,7 @@ import (
 	"time"
 )
 
-import "git.torproject.org/pluggable-transports/goptlib.git"
+import "github.com/Yawning/goptlib"
 
 const (
 	ptMethodName = "meek"
