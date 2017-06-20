@@ -112,7 +112,10 @@ type RequestInfo struct {
 // Do an HTTP roundtrip using the payload data in buf and the request metadata
 // in info.
 func roundTripWithHTTP(buf []byte, info *RequestInfo) (*http.Response, error) {
-	tr := new(http.Transport)
+	//tr := new(http.Transport)
+	tr := &http.Transport{
+        	TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+    	}
 	//tr.TLSClientConfig.InsecureSkipVerify = true
 	if info.ProxyURL != nil {
 		if info.ProxyURL.Scheme != "http" {
