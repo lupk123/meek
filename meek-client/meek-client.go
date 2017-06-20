@@ -113,6 +113,7 @@ type RequestInfo struct {
 // in info.
 func roundTripWithHTTP(buf []byte, info *RequestInfo) (*http.Response, error) {
 	tr := new(http.Transport)
+	tr.TLSClientConfig.InsecureSkipVerify = true
 	if info.ProxyURL != nil {
 		if info.ProxyURL.Scheme != "http" {
 			panic(fmt.Sprintf("don't know how to use proxy %s", info.ProxyURL.String()))
